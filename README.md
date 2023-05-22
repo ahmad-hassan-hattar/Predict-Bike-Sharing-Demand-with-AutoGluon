@@ -1,41 +1,6 @@
 # Predict Bike Sharing Demand with AutoGluon
 #### Ahmad Hassan
 
-## Initial Training
-### What did you realize when you tried to submit your predictions? What changes were needed to the output of the predictor to submit your results?
-For submission, you cannot submit negative predictions (-), so I made negative predictions 0.
-
-### What was the top ranked model that performed?
-Best model: "WeightedEnsemble_L3" when I used it with the normal features, and with no hyperparameter tuning.
-
-## Exploratory data analysis and feature creation
-### What did the exploratory analysis find and how did you add additional features?
-I extracted hours, days, month, and year features from the DateTime feature and converted some features to be categorical. Histograms helped me see the distribution of various features.
-
-### How much better did your model perform after adding additional features and why do you think that is?
-After extracting the new features from DateTime and converting some other features to categorical, the scores of the models did not improve.
-
-## Hyperparameter tuning
-### How much better did your model perform after trying different hyperparameters?
-The performance did not improve; in fact, it decreased.
-
-### If you were given more time with this dataset, where do you think you would spend more time?
-I would spend more time creating more synthetic features.
-
-### Create a table with the models you ran, the hyperparameters modified, and the Kaggle score.
-
-| Model          | HPO1                              | HPO2                  | HPO3                      | Score   |
-|---------------|----------------------------------|----------------------|--------------------------|--------|
-| Initial        | Default                           | Default               | Default                   | 1.84484 |
-| Add_features   | Default                           | Default               | Default                   | 0.63921 |
-| HPO            | {"num_boost_round": 50, "num_leaves": 30}  | {"dropout_prob": 0.2} | {"n_estimators": 100}    | 0.48866 |
-
-### Create a line plot showing the top model score for the three (or more) training runs during the project.
-![model_train_score.png](model_train_score.png)
-
-### Create a line plot showing the top Kaggle score for the three (or more) prediction submissions during the project.
-![model_test_score.png](model_test_score.png)
-
 ## Results and Conclusion
 
 ### Initial Training
